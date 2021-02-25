@@ -2,8 +2,9 @@ const connection = require("../database/connection")
 
 module.exports = {
   async insert(address) {
+    const cepReplace = address.cep.replace(/\D/gim, '')
     await connection("address").insert({
-      cep: address.cep,
+      cep: cepReplace,
       logradouro: address.logradouro,
       complemento: address.complemento ? address.complemento : null,
       bairro: address.bairro,

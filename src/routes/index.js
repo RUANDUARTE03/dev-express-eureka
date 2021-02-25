@@ -1,8 +1,8 @@
 const express = require("express")
 const routes = express.Router()
 
-const ViaCepController = require("../controllers/viaCep.controller")
+const AddressController = require("../controllers/address.controller")
 
-routes.get("/viacep/:cep", ViaCepController.index)
+routes.get("/address/:cep", AddressController.index)
 
 module.exports = routes
