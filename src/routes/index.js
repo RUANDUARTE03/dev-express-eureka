@@ -1,8 +1,8 @@
 const express = require("express")
 const routes = express.Router()
 
-routes.get("/", (req, res) => {
-  res.send("Iniciando projeto")
-})
+const ViaCepController = require("../controllers/viaCep.controller")
+
+routes.get("/viacep/:cep", ViaCepController.index)
 
 module.exports = routes
